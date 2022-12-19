@@ -1,4 +1,33 @@
-<p>todo-home works!</p>
-<app-todo-item></app-todo-item>
-<input type="password" pPassword />
-<p-password></p-password>
+
+<div class="container">
+  <h1 style="padding-top: 30px;">Todos Management</h1>
+  <div class="index-info">
+    <div class="index-item">
+      <label style="font-weight: bold;">100</label>
+      <label>ToDos</label>
+    </div>
+    <div class="index-item">
+      <label style="font-weight: bold;">100</label>
+      <label>Active</label>
+    </div>
+    <div class="index-item">
+      <label style="font-weight: bold;">100</label>
+      <label>Completed</label>
+    </div>
+  </div>
+
+</div>
+<div class="tab-view">
+  <p-tabView>
+    <p-tabPanel header="ToDos">
+      <app-todo-item></app-todo-item>
+    </p-tabPanel>
+    <p-tabPanel header="Active">
+      Active
+    </p-tabPanel>
+    <p-tabPanel header="Completed">
+      Completed
+    </p-tabPanel>
+  </p-tabView>
+
+</div>

@@ -1,0 +1,47 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background: rgb(44,117,244);
+  background: linear-gradient(90deg, rgba(44,117,244,1) 0%, rgba(29,91,199,1) 52%, rgba(16,65,149,1) 100%);}
+.index-info{
+  position: relative;
+  top: 40px;
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: rgba(100, 100, 111, 0.1) 0px 0px 29px 0px;
+  background-color: white;
+}
+
+.index-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  color: white;
+  font-size: 24px;
+}
+.tab-view{
+  padding-top: 50px;
+  position: relative;
+}
+
+:host {
+  ::ng-deep .p-tabview .p-tabview-nav{
+    border: unset !important;
+    background: #ffffff;
+    border-bottom: 1px solid #dee2e6 !important;
+    // border-width: unset !important
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+  }
+}
+
