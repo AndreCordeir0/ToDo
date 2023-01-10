@@ -1,5 +1,5 @@
   import { Component, OnInit } from '@angular/core';
-  import { AsyncSubject, from, Observable, of } from 'rxjs';
+  import { AsyncSubject, forkJoin, from, Observable, of } from 'rxjs';
 
   @Component({
     selector: 'app-todo-home',
@@ -11,26 +11,42 @@
 
 
    ngOnInit() {
-    //  this.adicionarInvestigado();
-     this.adicionarEndereco();
-  }
-  adicionarEndereco(){
-    let observables:Observable<number> = from(of(2,3,4,5,6));
 
-    observables.subscribe(a=>{
-      console.log('cidade');
-      console.log(a.toString());
-    })
+     this.adicionarInvestigado();
   }
+
 
 
 
 
   async adicionarInvestigado(){
     let behavior:AsyncSubject<any> = new AsyncSubject();
+    let enderecoSubject:AsyncSubject<any> = new AsyncSubject<any>();
+
+    let lista:Array<AsyncSubject<any>> = []
+    lista.push(behavior);
+    lista.push(enderecoSubject);
+
     console.log('adicionarinvestigado')
     this.qualificacao(behavior,true);
-    behavior.subscribe(_=>this.salvar());
+    this.adicionarEndereco(enderecoSubject);
+
+    forkJoin(lista).subscribe(_=>this.salvar());
+  }
+  adicionarEndereco(enderecoSubject:AsyncSubject<any>){
+    setTimeout(()=>{
+      let listaObservable:Array<Observable<number>> = [];
+      let primeiro = of(1);
+      let segundo = of(2);
+      listaObservable.push(primeiro,segundo);
+      forkJoin(listaObservable).subscribe(res=>{
+        console.log(res[0]);
+        console.log(res[1]);
+
+        enderecoSubject.next(true);
+        enderecoSubject.complete();
+      })
+    },6000)
   }
 
   qualificacao(asyncObject:AsyncSubject<any>,hasMunicipio:boolean){
@@ -46,6 +62,7 @@
       asyncObject.next(true);
       asyncObject.complete();
     }
+    console.log('uf')
   }
 
   // const click$ = fromEvent(document, 'click').pipe(
