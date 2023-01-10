@@ -19,14 +19,32 @@
 </div>
 <div class="tab-view">
   <p-tabView>
-    <p-tabPanel header="ToDos">
+    <p-tabPanel >
+      <ng-template pTemplate="header">
+        <div>
+          <label class="count"> {{count}}</label>
+          <label> ToDos</label>
+        </div>
+      </ng-template>
       <app-todo-item></app-todo-item>
     </p-tabPanel>
-    <p-tabPanel header="Active">
-      Active
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+        <div>
+          <label class="count"> {{count}}</label>
+          <label> Active</label>
+        </div>
+      </ng-template>
+      <app-todo-item></app-todo-item>
     </p-tabPanel>
-    <p-tabPanel header="Completed">
-      Completed
+    <p-tabPanel>
+      <ng-template pTemplate="header">
+        <div>
+          <label class="count"> {{count}}</label>
+          <label> Completed</label>
+        </div>
+      </ng-template>
+      <app-todo-item></app-todo-item>
     </p-tabPanel>
   </p-tabView>
 

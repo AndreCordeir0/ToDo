@@ -1,11 +1,13 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
-  background: rgb(44,117,244);
-  background: linear-gradient(90deg, rgba(44,117,244,1) 0%, rgba(29,91,199,1) 52%, rgba(16,65,149,1) 100%);}
-.index-info{
+  background: rgb(44, 117, 244);
+  background: linear-gradient(90deg, rgba(44, 117, 244, 1) 0%, rgba(29, 91, 199, 1) 52%, rgba(16, 65, 149, 1) 100%);
+}
+
+.index-info {
   position: relative;
   top: 40px;
   display: flex;
@@ -17,22 +19,33 @@
   background-color: white;
 }
 
-.index-item{
+.index-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-h1{
+
+h1 {
   color: white;
   font-size: 24px;
 }
-.tab-view{
+
+.tab-view {
   padding-top: 50px;
   position: relative;
 }
 
+.count {
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 5px;
+  padding-right: 5px;
+  background: rgb(242, 238, 238);
+  font-size: 11px;
+}
+
 :host {
-  ::ng-deep .p-tabview .p-tabview-nav{
+  ::ng-deep .p-tabview .p-tabview-nav {
     border: unset !important;
     background: #ffffff;
     border-bottom: 1px solid #dee2e6 !important;
@@ -44,4 +57,3 @@ h1{
     margin: 0 auto;
   }
 }
-
