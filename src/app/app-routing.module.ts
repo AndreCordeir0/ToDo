@@ -6,7 +6,12 @@ const routes: Routes = [
   {
     path: 'to-do',
     loadChildren: () => import('./todo-home/todo-home.module').then(m => m.TodoHomeModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   }
+
 
 ];
 

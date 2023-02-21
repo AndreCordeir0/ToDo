@@ -1,0 +1,19 @@
+  <div class="login-div" (submit)="submitLogin()">
+    <form class="container-central" [formGroup]="form">
+      <label class="title">Login</label>
+      <div  [ngClass]="{'invalid':!this.form.get('email')?.valid && this.form.get('email')?.touched}" class="container">
+        <label for="email">Email</label>
+        <input
+          type="text" formControlName="email" pInputText />
+      </div>
+      <div class="container">
+        <label for="password">Senha</label>
+        <p-password [ngClass]="{'invalid':!this.form.get('password')?.valid && this.form.get('password')?.touched}"
+           id="password" formControlName="password" [toggleMask]="true"></p-password>
+      </div>
+      <div class="container">
+        <button pButton type="submit" label="Click"></button>
+      </div>
+    </form>
+  </div>
+  <p-toast></p-toast>

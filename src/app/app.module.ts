@@ -1,25 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-import {MenuItem} from 'primeng/api';                  //api
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoItemComponent } from './todo-item/todo-item.component';
-import { TodoHomeComponent } from './todo-home/todo-home.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
-
+    HttpClientModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
