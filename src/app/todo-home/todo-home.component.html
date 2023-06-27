@@ -1,4 +1,3 @@
-
 <div class="container">
   <h1 style="padding-top: 30px;">Todos Management</h1>
   <div class="index-info">
@@ -17,34 +16,19 @@
   </div>
 </div>
 <div class="tab-view">
-  <p-tabView>
-    <p-tabPanel >
-      <ng-template pTemplate="header">
-        <div>
-          <label class="count"> {{count}}</label>
-          <label> ToDos</label>
-        </div>
-      </ng-template>
-      <app-todo-item></app-todo-item>
-    </p-tabPanel>
-    <p-tabPanel>
-      <ng-template pTemplate="header">
-        <div>
-          <label class="count"> {{count}}</label>
-          <label> Active</label>
-        </div>
-      </ng-template>
-      <app-todo-item></app-todo-item>
-    </p-tabPanel>
-    <p-tabPanel>
-      <ng-template pTemplate="header">
-        <div>
-          <label class="count"> {{count}}</label>
-          <label> Completed</label>
-        </div>
-      </ng-template>
-      <app-todo-item></app-todo-item>
-    </p-tabPanel>
-  </p-tabView>
-
+  <!-- <div *ngFor="let header of headers">
+    <label class="count" [ngStyle]="calcularDiametroCounter(count)"> {{count}}</label>
+    <label>{{header}}</label>
+  </div> -->
+</div>
+<div class="dragable-items">
+  <div class="card-item">
+    <app-todo-item></app-todo-item>
+  </div>
+  <div class="card-item">
+    <app-todo-item></app-todo-item>
+  </div>
+  <div class="card-item">
+    <app-todo-item></app-todo-item>
+  </div>
 </div>

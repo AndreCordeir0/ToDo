@@ -33,27 +33,33 @@ h1 {
 .tab-view {
   padding-top: 50px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .count {
   border-radius: 50%;
   border: 1px solid black;
-  padding: 5px;
-  padding-right: 5px;
+  // padding: 5px;
+  // padding-right: 5px;
   background: rgb(242, 238, 238);
   font-size: 11px;
 }
 
-:host {
-  ::ng-deep .p-tabview .p-tabview-nav {
-    border: unset !important;
-    background: #ffffff;
-    border-bottom: 1px solid #dee2e6 !important;
-    // border-width: unset !important
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: max-content;
-    margin: 0 auto;
-  }
+.dragable-items{
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+}
+.card-item{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
 }
