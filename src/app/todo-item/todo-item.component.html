@@ -1,5 +1,5 @@
-<div class="dragable-cards">
-  <div class="card">
+<div class="dragable-cards" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+  <div [id]="id" class="card" draggable="true" (dragstart)="drag($event)">
     <div class="card-header">
       <div class="flex">
         <i></i>
